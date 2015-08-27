@@ -1,0 +1,23 @@
+.user-info {
+  margin-top: 9px;
+}
+ 
+.nav {
+  margin-top: 5px;
+}
+
+.vote-arrows {
+  width: 40px;
+  text-align: center;
+}
+
+.favorite {
+  margin-top: 20px;
+}
+
+.voted {
+  opacity: 0.5;
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";

@@ -18,8 +18,11 @@ end
 # Devise - user authentication (CP 2 082015)
 gem 'devise'
 
-# Figaro - for handling environmental variables (CP 082015)
+# Figaro - for handling environmental variables (CP 2 082015)
 gem 'figaro', '1.0'
+
+# Bootstrap - for styling (CP 3 082715)
+gem 'bootstrap-sass'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
