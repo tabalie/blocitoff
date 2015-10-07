@@ -24,6 +24,15 @@ gem 'figaro', '1.0'
 # Bootstrap - for styling (CP 3 082715)
 gem 'bootstrap-sass'
 
+# CarrierWave - image uploading software for avatars (CP 4 100715)
+gem 'carrierwave'
+
+# MiniMagick - image manipulation for avatars (CP 4 100715)
+gem 'mini_magick'
+
+# Fog - to support storing images on Amazon S3 (CP 4 100715)
+gem 'fog'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

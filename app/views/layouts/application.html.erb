@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
    
   <title>BlocItOff</title>
@@ -7,19 +8,31 @@
 	<%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
 </head>
+
 <body>
+
+  <div class="pull-right user-info">
+    <% if current_user %>
+      <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
+        Hello <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>!
+      <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+    <% end %>
+  </div>
+
 	<div class="container">
 		<ul class="nav nav-tabs">
 			<li><%=link_to 'Home', root_path%></li>
 			<li><%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary' %></li>
 		  <li><%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary' %></li>
-			<li><%=link_to 'Logout', destroy_user_session_path, class: 'btn btn-primary', method: :delete if current_user%></li>
+			<li><%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do %>
+        <span class="glyphicon glyphicon-log-out"></span></li>
 			<li><%=link_to 'Tasks', current_user, class: 'btn btn-primary' %></li>
 		</ul>
 	<%= yield %>
 	</div>
-<br>
 
 </body>
+
 </html>
