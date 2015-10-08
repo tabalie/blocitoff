@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  resources :users, only: [:show, :update]
-  #Set up root (CP 2 082015)
+  	resources :users, only: [:show]
+  
   get 'welcome/index'
+  
   root to: 'welcome#index'
 end
