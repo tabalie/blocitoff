@@ -1,3 +1,6 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 .user-info {
   margin-top: 9px;
 }
@@ -19,5 +22,3 @@
   opacity: 0.5;
 }
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
