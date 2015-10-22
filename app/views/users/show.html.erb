@@ -16,6 +16,18 @@
         <li>adhfahdfkjahfd</li>
         </ul>
       </div>
-    </div>
+      <div class="text-center">
+        <div class="new_item item">
+          <%= render partial: 'items/form', locals: {item: Item.new } %>
+        </div>
+        <br>
+        <div class="information">
+          <small><i>
+            <span class="glyphicon glyphicon-info-sign"></span>
+            Items longer than 50 characters will not post to your list.
+          </i>
+          </small>
+        </div>
+      </div>
   </div>
 </div>

@@ -1,0 +1,10 @@
+<%= content_tag :div, class: 'item', id: "item-#{item.id}" do %>
+
+  <h3 class="item-styles pull-left inliner lead"><%= item.name %></h3>
+
+  <%= link_to [item], method: :delete, class: 'pull-right inliner delete-item', remote: true do %>
+    <span class="glyphicon glyphicon-ok"></span>
+  <% end %>
+
+  <small class="pull-right white inliner days_left"><%= item.days_left %> days left</small>
+<% end %>
