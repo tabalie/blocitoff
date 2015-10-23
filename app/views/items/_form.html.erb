@@ -1,17 +1,33 @@
-<%= form_for item, remote: true do |f| %>
-<% if item.errors.any? %>
-  <div class="alert alert-danger">
-    <h4> There are <%= pluralize(item.errors.count, "error") %>.</h4>
-    <ul>
-      <% item.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-<% end %>
-  <%= form_group_tag(item.errors[:name]) do %>
-    <%= f.text_field :name, class: 'form-control inliner', placeholder: "Enter your todo item and hit [ENTER]" %>
-  <% end %>
+<!-- # <%= form_for item, remote: true do |f| %>
+# <% if item.errors.any? %>
+#   <div class="alert alert-danger">
+#     <h4> There are <%= pluralize(item.errors.count, "error") %>.</h4>
+#     <ul>
+#       <% item.errors.full_messages.each do |msg| %>
+#         <li><%= msg %></li>
+#       <% end %>
+#     </ul>
+# <% end %>
+#   <%= form_group_tag(item.errors[:name]) do %>
+#     <%= f.text_field :name, class: 'form-control inliner', placeholder: "Enter your todo item and hit [ENTER]" %>
+#   <% end %>
+#   <div class="form-group">
+#     <%= f.submit "Add Todo", class: 'btn hidden-button' %>
+#   </div>
+# <% end %> -->
+
+<%= form_for [current_user, Item.new], class: "form-horizontal" do |f| %>
   <div class="form-group">
-    <%= f.submit "Add Todo", class: 'btn hidden-button' %>
+    <h1>To-Do List</h1>
+
+    <%= f.label :name, 'To Do', class: "col-sm-1 control-label" %>
+    <div class="col-sm-5">
+      <%= f.text_field :name, class: "form-control"  %>
+    </div>
   </div>
+
+  <div class="form-group">
+    <%= f.submit "Save", class: "btn btn-primary" %>
+  </div>
+
 <% end %>

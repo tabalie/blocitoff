@@ -9,23 +9,11 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "New item saved!"
-      redirect_to(user_items_path(current_user))
+      redirect_to current_user
     else
       flash[:error] = "Error saving item. Please try again."
       render :new
     end
-  end
-
-  def show
-    @item = Item.find(params[:id])
-  end
-
-  def new
-    @item = Item.new
-  end
-
-  def edit
-    @items = Item.find(params[:id])
   end
 
 end

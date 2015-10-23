@@ -1,10 +1,23 @@
-<%= content_tag :div, class: 'item', id: "item-#{item.id}" do %>
+<!-- # <%= content_tag :div, class: 'item', id: "item-#{item.id}" do %>
+#
+#   <h3 class="item-styles pull-left inliner lead"><%= item.name %></h3>
+#
+#   <%= link_to [item], method: :delete, class: 'pull-right inliner delete-item', remote: true do %>
+#     <span class="glyphicon glyphicon-ok"></span>
+#   <% end %>
+#
+#   <small class="pull-right white inliner days_left"><%= item.days_left %> days left</small>
+# <% end %> -->
 
-  <h3 class="item-styles pull-left inliner lead"><%= item.name %></h3>
+<ul>
+  <p id='item-<%=item.id%>'><%= link_to "", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true %>
+    <%= item.name %>
+    <small>
+      <%= item.days_left %> days left before your item is automatically deleted
+    </small>
+  </p>
+</ul>
 
-  <%= link_to [item], method: :delete, class: 'pull-right inliner delete-item', remote: true do %>
-    <span class="glyphicon glyphicon-ok"></span>
-  <% end %>
 
-  <small class="pull-right white inliner days_left"><%= item.days_left %> days left</small>
-<% end %>
+
+<!-- data: { confirm: "Are you sure?" } -->

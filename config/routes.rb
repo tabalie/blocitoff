@@ -1,17 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'items/index'
-
-  get 'items/show'
-
-  get 'items/new'
-
-  get 'items/edit'
-
   devise_for :users
-  	resources :users, only: [:show, :update]
 
-  resources :items, only: [:create]
+  resources :users, only: [:update, :show, :index] do
+      resources :items, only: [:create, :destroy]
+  end
 
   get 'welcome/index'
 
