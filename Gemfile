@@ -10,7 +10,7 @@ group :production do
   gem 'rails_12factor'
 end
 
-# Development database (CP 2 082015) 
+# Development database (CP 2 082015)
 group :development do
   gem 'sqlite3'
 end
@@ -33,6 +33,9 @@ gem 'mini_magick'
 # Fog - to support storing images on Amazon S3 (CP 4 100715)
 gem 'fog'
 
+# Faker - generates developmental data automatically (CP 6 102215)
+gem 'faker'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -48,5 +51,3 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-
