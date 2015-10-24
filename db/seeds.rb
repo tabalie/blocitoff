@@ -14,20 +14,22 @@ require 'faker'
 
 # Create Items
   30.times do
-    Items.create!(
-      name: Faker::Lorem.sentence,
+    Item.create!(
+			user: users.sample,
+      name: Faker::Lorem.sentence
     )
   end
   items = Item.all
 
-# Create a member
-  member = User.new(
-    name:     'Member User',
-    email:    'member@example.com',
-    password: 'helloworld'
-  )
-  member.skip_confirmation!
-  member.save!
+# Create test member
+	member = User.new(
+		name: "test",
+		email: "test@example.com",
+		password: "password"
+	)
+
+	member.skip_confirmation!
+	member.save!
 
  puts "Seed finished"
  puts "#{User.count} users created"
