@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   def index
     @items = current_user.items
   end
@@ -8,10 +9,10 @@ class ItemsController < ApplicationController
     @item.user = current_user
 
     if @item.save
-      flash[:notice] = "New item saved!"
+      flash[:notice] = "New task saved!"
       redirect_to current_user
     else
-      flash[:error] = "Error saving item. Please try again."
+      flash[:error] = "Error saving task. Please try again."
       render :new
     end
   end
