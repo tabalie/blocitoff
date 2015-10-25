@@ -12,12 +12,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @items = current_user.items
   end
 
   def index
     @users = User.all
-    items = current_user.items
   end
 
   private
