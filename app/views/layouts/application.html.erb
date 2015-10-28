@@ -34,10 +34,9 @@
 	<div class="container">
 		<ul class="nav nav-tabs">
 			<li><%= link_to 'Home', root_path%></li>
-			<li><%= link_to 'Add a Task', user_path(current_user), class: 'btn btn-primary' %></li>
-      <li><%= link_to 'Task List',users_path, class: 'btn btn-primary' %></li>
-		</ul>
-	<%= yield %>
+      <li><%= link_to('Task List', current_user, class: 'btn btn-primary') if current_user %></li>
+    </ul>
+	   <%= yield %>
 	</div>
 
 </body>

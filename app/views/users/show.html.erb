@@ -1,22 +1,17 @@
-<h3>Your BlocItOff Profile:</h3>
+<h2>Hello <%= current_user.name %>!</h2>
+
 <div class="row">
-  <div class="col-md-8">
-    <div class="media">
-      <div class="media-body">
-        <h3>Your Tasks!</h3>
-      </div>
-      <div class="text-center">
-        <div class="new_item item">
-          <%= render partial: 'items/form'%>
-        </div>
-        <br>
-        <div class="information">
-          <small><i>
-            <span class="glyphicon glyphicon-info-sign"></span>
-            Items longer than 50 characters will not post to your list.
-          </i>
-          </small>
-        </div>
-      </div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-11">
+    <div class="align-left">
+      <%= render partial: 'items/form' %>
+        <small><i>
+          <span class="glyphicon glyphicon-info-sign"></span>
+          Items longer than 50 characters will not post to your list.
+        </i>
+        </small>
+    </div>
+
+    <%= render @items %>
   </div>
 </div>

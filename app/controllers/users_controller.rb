@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_action :authenticate_user!, except: [:show]
 
   def update
@@ -13,10 +14,6 @@ class UsersController < ApplicationController
 
   def show
     @items = current_user.items
-  end
-
-  def index
-    @users = User.all
   end
 
   private
