@@ -19,8 +19,6 @@ require 'faker'
   member.skip_confirmation!
   member.save!
 
-  users = User.all
-
 # Create Items
   10.times do
     Item.create!(
