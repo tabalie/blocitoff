@@ -10,21 +10,21 @@ require 'faker'
   user.save!
 
 # Create test member
-	member = User.new(
-		name: "test",
-		email: "test@example.com",
-		password: "password"
-	)
+  member = User.new(
+    name: "test",
+    email: "test@example.com",
+    password: "password"
+  )
 
-	member.skip_confirmation!
-	member.save!
+  member.skip_confirmation!
+  member.save!
 
   users = User.all
 
 # Create Items
   10.times do
     Item.create!(
-			user: users.sample,
+      user: users.sample,
       name: Faker::Lorem.sentence
     )
   end
