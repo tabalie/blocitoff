@@ -18,21 +18,18 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @item = Item.find(item_params)
+    @item = Item.find(params[:id])
 
     if @item.destroy
-      flash[:notice] = "Task was marked as completed."
-      redirect_to current_user
+      flash[:notice] = "Completed."
     else
-      flash[:error] = "Task could not be marked as completed. Please try again."
-      redirect_to current_user
+      flash[:error] = "Error, please try again."
     end
 
-  respond_to do |format|
-    format.html
-    format.js
-  end
+    respond_to do |format|
+      format.html
+      format.js
+    end
 
   end
 
