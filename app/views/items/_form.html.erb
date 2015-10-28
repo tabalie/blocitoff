@@ -1,6 +1,7 @@
 <%= form_for [current_user, Item.new], class: "form-horizontal" do |f| %>
   <div class="form-group">
-    <%= f.label :name, 'To Do List', class: "col-sm-1 control-label" %>
+    <br><br>
+    <%= f.label :name, 'Add task below', class: "col-sm-1 control-label" %>
     <div class="col-sm-5">
       <%= f.text_field :name, class: "form-control"  %>
     </div>
