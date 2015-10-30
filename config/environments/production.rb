@@ -1,4 +1,8 @@
 Rails.application.configure do
+
+  # http://frozen-earth-2819.herokuapp.com (BlocItOff)
+  config.action_mailer.default_url_options = { host: 'frozen-earth-2819.herokuapp.com' }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -77,5 +81,4 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => "https://frozen-earth-2819.herokuapp.com" }
 end
