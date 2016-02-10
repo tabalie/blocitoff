@@ -1,7 +1,7 @@
 Rails.application.configure do
 
-  # http://frozen-earth-2819.herokuapp.com (BlocItOff)
-  config.action_mailer.default_url_options = { host: 'frozen-earth-2819.herokuapp.com' }
+  # http://tabalie-blocitoff.herokuapp.com (BlocItOff)
+  config.action_mailer.default_url_options = { host: 'tabalie-blocitoff.herokuapp.com' }
 
   # Settings specified here will take precedence over those in config/application.rb.
 
