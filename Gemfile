@@ -13,6 +13,7 @@ end
 # Development database (CP 2 082015)
 group :development do
   gem 'sqlite3'
+  gem 'rails_db'
 end
 
 # Devise - user authentication (CP 2 082015)
